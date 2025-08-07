@@ -1,0 +1,2 @@
+[INFO] 05-08-2025 23:12:02 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] - Test CaseInvalidLoginTCNADA started
+[INFO] 05-08-2025 23:12:05 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:19)] - Test Case InvalidLoginTC NADA failed

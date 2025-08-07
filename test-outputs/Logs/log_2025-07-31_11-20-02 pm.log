@@ -1,0 +1,4 @@
+[INFO] 31-07-2025 23:20:02 [main] [Tests.LoginTest.setup(LoginTest.java:28)] - Chrome driver is opened
+[INFO] 31-07-2025 23:20:06 [main] [Tests.LoginTest.setup(LoginTest.java:30)] - Page is redirected to the URL
+[INFO] 31-07-2025 23:20:07 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] - Test CasevalidLoginTCstarted
+[INFO] 31-07-2025 23:20:11 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:13)] - Test CasevalidLoginTCpassed

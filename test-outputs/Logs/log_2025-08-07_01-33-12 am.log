@@ -1,0 +1,5 @@
+[INFO] 07-08-2025 01:33:12 [main] [Tests.MyAccountTest.setup(MyAccountTest.java:35)] - Chrome driver is opened
+[INFO] 07-08-2025 01:33:17 [main] [Tests.MyAccountTest.setup(MyAccountTest.java:37)] - Navigated to Login Page
+[INFO] 07-08-2025 01:33:21 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] - Test CaseeditAccountInfoTCstarted
+[INFO] 07-08-2025 01:34:12 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:19)] - Test CaseeditAccountInfoTCfailed
+[INFO] 07-08-2025 01:34:13 [main] [Tests.MyAccountTest.quit(MyAccountTest.java:66)] - Driver is closed

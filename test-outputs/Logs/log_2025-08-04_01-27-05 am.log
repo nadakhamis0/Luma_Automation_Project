@@ -1,0 +1,2 @@
+[INFO] 04-08-2025 01:27:06 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] - Test CaseInvalidLoginTCstarted
+[INFO] 04-08-2025 01:27:10 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:13)] - Test CaseInvalidLoginTCpassed

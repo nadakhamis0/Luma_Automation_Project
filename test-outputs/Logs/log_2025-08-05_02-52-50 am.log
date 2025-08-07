@@ -1,0 +1,4 @@
+[INFO] 05-08-2025 02:52:50 [main] [Tests.MyAccountTest.setup(MyAccountTest.java:34)] - Chrome driver is opened
+[INFO] 05-08-2025 02:52:58 [main] [Tests.MyAccountTest.setup(MyAccountTest.java:36)] - Navigated to Login Page
+[INFO] 05-08-2025 02:53:10 [main] [Tests.MyAccountTest.setup(MyAccountTest.java:43)] - Navigated to Edit Account Page
+[INFO] 05-08-2025 02:53:11 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] - Test CaseeditAccountInfoTCstarted

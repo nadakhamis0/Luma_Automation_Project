@@ -1,0 +1,19 @@
+[DEBUG] 31-07-2025 21:40:06 [main] [org.testng.TestNG] - suiteXmlPath: "C:\Users\Abdoussef\AppData\Local\JetBrains\IdeaIC2024.1\temp-testng-customsuite.xml"
+[TRACE] 31-07-2025 21:40:07 [main] [org.testng.internal.Graph] - [Graph] ADDING NODE LoginTest.setup()[pri:0, instance:null] 340063698
+[TRACE] 31-07-2025 21:40:07 [main] [org.testng.internal.Graph] - [Graph] ================ SORTING
+[TRACE] 31-07-2025 21:40:07 [main] [org.testng.internal.Graph] - [Graph] =============== DONE SORTING
+[TRACE] 31-07-2025 21:40:07 [main] [org.testng.internal.Graph] - [Graph] ====== SORTED NODES
+[TRACE] 31-07-2025 21:40:07 [main] [org.testng.internal.Graph] - [Graph] ====== END SORTED NODES
+[TRACE] 31-07-2025 21:40:07 [main] [org.testng.internal.Graph] - [Graph] ADDING NODE LoginTest.quit()[pri:0, instance:null] 318107040
+[TRACE] 31-07-2025 21:40:07 [main] [org.testng.internal.Graph] - [Graph] ================ SORTING
+[TRACE] 31-07-2025 21:40:07 [main] [org.testng.internal.Graph] - [Graph] =============== DONE SORTING
+[TRACE] 31-07-2025 21:40:07 [main] [org.testng.internal.Graph] - [Graph] ====== SORTED NODES
+[TRACE] 31-07-2025 21:40:07 [main] [org.testng.internal.Graph] - [Graph] ====== END SORTED NODES
+[TRACE] 31-07-2025 21:40:07 [main] [org.testng.internal.Graph] - [Graph] ADDING NODE LoginTest.validLoginTC()[pri:0, instance:Tests.LoginTest@2dd8ff1d] -1213845268
+[TRACE] 31-07-2025 21:40:07 [main] [org.testng.internal.Graph] - [Graph] ================ SORTING
+[TRACE] 31-07-2025 21:40:07 [main] [org.testng.internal.Graph] - [Graph] =============== DONE SORTING
+[TRACE] 31-07-2025 21:40:07 [main] [org.testng.internal.Graph] - [Graph] ====== SORTED NODES
+[TRACE] 31-07-2025 21:40:07 [main] [org.testng.internal.Graph] - [Graph] ====== END SORTED NODES
+[INFO] 31-07-2025 21:40:07 [main] [org.testng.internal.Utils] - [TestNG] Running:
+  C:\Users\Abdoussef\AppData\Local\JetBrains\IdeaIC2024.1\temp-testng-customsuite.xml
+

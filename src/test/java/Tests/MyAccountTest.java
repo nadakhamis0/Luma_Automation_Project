@@ -6,6 +6,7 @@ import Pages.LoginPage;
 import Pages.MyAccountPage;
 import Utilities.DataUtils;
 import Utilities.LogsUtils;
+import Utilities.Utility;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -22,7 +23,7 @@ import static Utilities.DataUtils.getPropertyValue;
 public class MyAccountTest {
     private final String FIRST_NAME = DataUtils.getJsonData("EditInfo", "firstname");
     private final String LAST_NAME = DataUtils.getJsonData("EditInfo", "lastname");
-    private final String NEW_EMAIL = DataUtils.getJsonData("EditInfo", "new_email");
+    //private final String NEW_EMAIL = DataUtils.getJsonData("EditInfo", "new_email");
     private final String CURRENT_PASSWORD = DataUtils.getJsonData("EditInfo", "current_password");
     private final String NEW_PASSWORD = DataUtils.getJsonData("EditInfo", "new_password");
     private final String CONFIRM_PASSWORD = DataUtils.getJsonData("EditInfo", "confirm_new_password");
@@ -51,12 +52,11 @@ public class MyAccountTest {
                 .enterLastName(LAST_NAME)
                 .clickOnChangeEmailCheckbox()
                 .clickOnChangePasswordCheckbox()
-                .enterNewEmail(NEW_EMAIL)
                 .enterCurrentPassword(CURRENT_PASSWORD)
                 .enterNewPassword(NEW_PASSWORD)
                 .enterConfirmPassword(CONFIRM_PASSWORD)
                 .clickOnSaveButton();
-        //Utility.generalWait(getDriver());
+        Utility.generalWait(getDriver());
         Assert.assertTrue(new MyAccountPage(getDriver()).assertMyAccountPageTc(getPropertyValue("environment", "LOGIN_URL")));
     }
 

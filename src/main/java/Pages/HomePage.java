@@ -1,5 +1,6 @@
 package Pages;
 
+import Utilities.LogsUtils;
 import Utilities.Utility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +12,6 @@ public class HomePage {
     private static List<WebElement> allMenuSections;
     private final WebDriver driver;
     private final By Logo = By.xpath("//a[@aria-label='store logo']//img");
-    private final By cartIcon = By.cssSelector(".action.showcart");
     private final By menuSection = By.id("ui-id-");
     private final By allProductsOnPage = By.xpath("//*[@class='product-item-info']");
     /*private final By whatsNewCategory = By.id("ui-id-3");
@@ -35,18 +35,23 @@ public class HomePage {
         return this;
     }
 
-    public HomePage clickOnCarIcon() {
-        Utility.clickingOnElement(driver, cartIcon);
+    public HomePage HoverOverAllPage() {
+        allMenuSections = driver.findElements(menuSection);
+        LogsUtils.info("Menu Section: " + allMenuSections.size());
+        for (int i = 1; i <= allMenuSections.size(); i++) {
+            By menuSection = By.id("ui-id-" + i + "");
+            Utility.hoverOverElement(driver, menuSection);
+        }
         return this;
     }
 
-    /*public HomePage HoverOverAllPage() {
-    allMenuSections = driver.findElements(menuSection);
-    for (int = i; i <= allMenuSections.size(); i++){
-        By menuSection = By.id("ui-id-"+i+"");
-        Utility.hoverOverElement(driver, menuSection);
-        }
-    return this;
-    }*/
+    public HomePage scrollToAllProjects() {
+        Utility.scrolling(driver, allProductsOnPage);
+        return this;
+    }
+
+    public boolean assertHomePageTc(String expectedValue) {
+        return driver.getCurrentUrl().equals(expectedValue);
+    }
 }
 

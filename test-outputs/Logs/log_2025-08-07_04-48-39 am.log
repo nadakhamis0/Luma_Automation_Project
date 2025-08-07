@@ -1,0 +1,4 @@
+[INFO] 07-08-2025 04:48:39 [main] [Tests.HomePageTest.setup(HomePageTest.java:21)] - Chrome driver is opened
+[INFO] 07-08-2025 04:48:43 [main] [Tests.HomePageTest.setup(HomePageTest.java:23)] - Navigated to Login Page
+[INFO] 07-08-2025 04:48:54 [main] [Pages.HomePage.HoverOverAllPage(HomePage.java:40)] - Menu Section: 0
+[INFO] 07-08-2025 04:48:55 [main] [Tests.HomePageTest.quit(HomePageTest.java:40)] - Driver is closed

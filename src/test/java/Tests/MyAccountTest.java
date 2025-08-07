@@ -23,12 +23,20 @@ import static Utilities.DataUtils.getPropertyValue;
 public class MyAccountTest {
     private final String FIRST_NAME = DataUtils.getJsonData("EditInfo", "firstname");
     private final String LAST_NAME = DataUtils.getJsonData("EditInfo", "lastname");
-    //private final String NEW_EMAIL = DataUtils.getJsonData("EditInfo", "new_email");
+    private final String NEW_EMAIL = DataUtils.getJsonData("EditInfo", "new_email");
     private final String CURRENT_PASSWORD = DataUtils.getJsonData("EditInfo", "current_password");
     private final String NEW_PASSWORD = DataUtils.getJsonData("EditInfo", "new_password");
     private final String CONFIRM_PASSWORD = DataUtils.getJsonData("EditInfo", "confirm_new_password");
     private final String EMAIL = DataUtils.getJsonData("EditInfo", "email");
     private final String PASSWORD = DataUtils.getJsonData("EditInfo", "password");
+
+    /*private final String FIRST_NAME = new Faker().name().firstName();
+    private final String LAST_NAME = new Faker().name().lastName();
+    private final String NEW_EMAIL = new Faker().internet().emailAddress();
+    private final String CURRENT_PASSWORD = new Faker().internet().password(16, 20);
+    private final String NEW_PASSWORD = new Faker().internet().password(16, 20);
+    private final String CONFIRM_PASSWORD = new Faker().internet().password(16, 20);*/
+
 
     @BeforeMethod
     public void setup() throws IOException {
@@ -52,6 +60,7 @@ public class MyAccountTest {
                 .enterLastName(LAST_NAME)
                 .clickOnChangeEmailCheckbox()
                 .clickOnChangePasswordCheckbox()
+                .enterNewEmail(NEW_EMAIL)
                 .enterCurrentPassword(CURRENT_PASSWORD)
                 .enterNewPassword(NEW_PASSWORD)
                 .enterConfirmPassword(CONFIRM_PASSWORD)

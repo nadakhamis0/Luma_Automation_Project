@@ -1,25 +1,11 @@
-package Pages;
+package Tests;
 
-import Utilities.LogsUtils;
-import Utilities.Utility;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import BaseTest.BaseTest;
 
-import java.util.List;
+public class End2End extends BaseTest {
+}
 
-public class AddToCartPage {
-    private static List<WebElement> products;
-    private final WebDriver driver;
-    private final By numberOfProductsOnCartIcon = By.cssSelector(".counter.qty");
-    private final By addToCartButton = By.xpath("//button[@title='Add to Cart']");
-
-
-    public AddToCartPage(WebDriver driver) {
-        this.driver = driver;
-    }
-
-    //TODO: Add a method to add products to the cart
+    /*TODO: Add a method to add products to the cart
     public AddToCartPage addProductsToCart() {
         products = driver.findElements(addToCartButton);
         for (WebElement product : products) {
@@ -38,7 +24,6 @@ public class AddToCartPage {
             return "0";
         }
     }
-    public boolean
 
     public boolean isCartEmpty() {
         try {
@@ -53,6 +38,4 @@ public class AddToCartPage {
         Utility.clickingOnElement(driver, addToCartButton);
         return this;
     }
-
-
-}
+}*/

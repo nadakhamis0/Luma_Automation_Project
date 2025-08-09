@@ -33,7 +33,7 @@ public class LoginTest {
     }
 
     @Test
-    public void validLoginTC() throws IOException {
+    public void validLoginTest() throws IOException {
         new LoginPage(getDriver())
                 .enterEmail(EMAIL)
                 .enterPassword(PASSWORD)
@@ -43,7 +43,7 @@ public class LoginTest {
     }
 
     @Test
-    public void InvalidLoginTC() throws IOException {
+    public void InvalidLoginTest() throws IOException {
         new LoginPage(getDriver())
                 .enterEmail(INVALID_EMAIL)
                 .enterPassword(INVALID_PASSWORD)

@@ -36,7 +36,7 @@ public class Utility {
     }
 
     public static WebDriverWait generalWait(WebDriver driver) {
-        return new WebDriverWait(driver, Duration.ofSeconds(10));
+        return new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
     public static void scrolling(WebDriver driver, By locator) {

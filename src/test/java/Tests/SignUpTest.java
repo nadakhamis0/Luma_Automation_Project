@@ -35,7 +35,7 @@ public class SignUpTest {
     }
 
     @Test
-    public void validSignUpTC() throws IOException {
+    public void validSignUpTest() throws IOException {
         new SignUpPage(getDriver())
                 .enterFirstName(FIRST_NAME)
                 .enterLastName(LAST_NAME)

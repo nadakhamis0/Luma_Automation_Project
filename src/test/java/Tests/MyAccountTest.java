@@ -53,7 +53,7 @@ public class MyAccountTest {
     }
 
     @Test
-    public void editAccountInfoTC() throws IOException {
+    public void editAccountInfoTest() throws IOException {
         new MyAccountPage(getDriver())
                 .clickOnEditLink()
                 .enterFirstName(FIRST_NAME)

@@ -27,7 +27,7 @@ public class HomePageTest {
     }
 
     @Test
-    public void hoveringHomePageTC() throws IOException {
+    public void hoveringHomePageTest() throws IOException {
         new HomePage(getDriver())
                 .clickOnLogo()
                 .HoverOverAllPage()

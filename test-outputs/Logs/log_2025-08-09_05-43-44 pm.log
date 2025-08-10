@@ -1,0 +1,4 @@
+[INFO] 09-08-2025 17:43:44 [main] [Tests.SearchTest.setup(SearchTest.java:25)] - Chrome driver is opened
+[INFO] 09-08-2025 17:43:49 [main] [Tests.SearchTest.setup(SearchTest.java:27)] - Navigated to Login Page
+[INFO] 09-08-2025 17:43:54 [main] [Tests.SearchTest.searchTest(SearchTest.java:41)] - Search button is clicked
+[INFO] 09-08-2025 17:43:55 [main] [Tests.SearchTest.quit(SearchTest.java:49)] - Driver is closed

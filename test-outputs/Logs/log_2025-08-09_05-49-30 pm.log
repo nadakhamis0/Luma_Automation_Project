@@ -1,0 +1,2 @@
+[INFO] 09-08-2025 17:49:31 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] - Test CasevalidSignUpTeststarted
+[INFO] 09-08-2025 17:49:37 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:13)] - Test CasevalidSignUpTestpassed

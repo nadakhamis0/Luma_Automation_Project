@@ -30,6 +30,12 @@ public class Utility {
         driver.findElement(locator).sendKeys(data);
     }
 
+    public static void sendData(WebDriver driver, By[] locators, String[] values) {
+        for (int i = 0; i < locators.length; i++) {
+            driver.findElement(locators[i]).sendKeys(values[i]);
+        }
+    }
+
     public static String getText(WebDriver driver, By locator) {
         new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOfElementLocated(locator));
         return driver.findElement(locator).getText();

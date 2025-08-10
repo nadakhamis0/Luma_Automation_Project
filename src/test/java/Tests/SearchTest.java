@@ -22,9 +22,7 @@ public class SearchTest {
     @BeforeMethod
     public void setup() throws IOException {
         setupDriver(getPropertyValue("environment", "Browser"));
-        LogsUtils.info("Chrome driver is opened");
         getDriver().get(getPropertyValue("environment", "LOGIN_URL"));
-        LogsUtils.info("Navigated to Login Page");
         new LoginPage(getDriver())
                 .enterEmail(EMAIL)
                 .enterPassword(PASSWORD)
@@ -36,7 +34,7 @@ public class SearchTest {
     @Test
     public void searchTest() throws IOException {
         new SearchPage(getDriver())
-                .enterInSearchBox("women's top")
+                .enterInSearchBox(" women's tops")
                 .clickOnSearchButton();
         LogsUtils.info("Search button is clicked");
         Assert.assertTrue(new SearchPage(getDriver()).assertSearchTc(getPropertyValue("environment", "SEARCH_URL")));

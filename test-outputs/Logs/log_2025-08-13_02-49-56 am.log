@@ -1,0 +1,4 @@
+[INFO] 13-08-2025 02:49:57 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] - Test CaseInvalidLoginTeststarted
+[INFO] 13-08-2025 02:49:59 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:13)] - Test CaseInvalidLoginTestpassed
+[INFO] 13-08-2025 02:50:08 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] - Test CasevalidLoginTeststarted
+[INFO] 13-08-2025 02:50:12 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:13)] - Test CasevalidLoginTestpassed

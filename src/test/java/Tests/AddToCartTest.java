@@ -37,8 +37,10 @@ public class AddToCartTest {
 
     @AfterMethod
     public void quit() {
+        Utility.takeScreenShot(getDriver(), "Add to cart");
         quitDriver();
         LogsUtils.info("Driver is closed");
+
 
     }
 }

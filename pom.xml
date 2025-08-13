@@ -47,6 +47,7 @@
         </plugins>
     </build>
 
+
     <dependencies>
         <!-- Selenium -->
         <dependency>

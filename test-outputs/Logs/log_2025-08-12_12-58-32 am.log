@@ -1,0 +1,6 @@
+[INFO] 12-08-2025 00:58:32 [main] [BaseTest.BaseTest.setup(BaseTest.java:26)] - Chrome driver is opened
+[INFO] 12-08-2025 00:58:36 [main] [BaseTest.BaseTest.setup(BaseTest.java:28)] - Navigated to Login Page
+[INFO] 12-08-2025 00:59:05 [main] [BaseTest.BaseTest.quit(BaseTest.java:36)] - Driver is closed
+[INFO] 12-08-2025 00:59:06 [main] [BaseTest.BaseTest.setup(BaseTest.java:26)] - Chrome driver is opened
+[INFO] 12-08-2025 00:59:11 [main] [BaseTest.BaseTest.setup(BaseTest.java:28)] - Navigated to Login Page
+[INFO] 12-08-2025 00:59:29 [main] [BaseTest.BaseTest.quit(BaseTest.java:36)] - Driver is closed

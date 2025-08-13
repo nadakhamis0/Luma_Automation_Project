@@ -1,6 +1,7 @@
 package Tests;
 
 import Pages.CheckoutPage;
+import Pages.LoginPage;
 import Utilities.DataUtils;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -14,6 +15,7 @@ import static DriverFactory.DriverFactory.*;
 import static Utilities.DataUtils.getPropertyValue;
 
 public class CheckoutTest {
+    private final String EMAIL = DataUtils.getJsonData("Login", "email");
     private final String FIRST_NAME = DataUtils.getJsonData("ShippingAddress", "firstname");
     private final String LAST_NAME = DataUtils.getJsonData("ShippingAddress", "lastname");
     private final String COMPANY = DataUtils.getJsonData("ShippingAddress", "company");
@@ -31,15 +33,19 @@ public class CheckoutTest {
     public void setup() throws IOException {
         setupDriver(getPropertyValue("environment", "Browser"));
         getDriver().get(getPropertyValue("environment", "HOME_URL"));
+        new LoginPage(getDriver())
+                .enterEmail(EMAIL);
         getDriver().manage().timeouts()
                 .implicitlyWait(Duration.ofSeconds(10));
     }
 
     @Test
-    public void validSignUpTest() throws IOException {
+    public void validCheckoutTest() throws IOException {
         new CheckoutPage(getDriver())
                 .addOrderToCart()
-                .enterFullName(FIRST_NAME, LAST_NAME)
+                .enterEmail(EMAIL)
+                .enterFirstName(FIRST_NAME)
+                .enterLastName(LAST_NAME)
                 .enterCompany(COMPANY)
                 .enterAddress(ADDRESS1, ADDRESS2, ADDRESS3)
                 .enterCity(CITY)
@@ -49,8 +55,8 @@ public class CheckoutTest {
                 .enterPhoneNumber(PHONE_NUMBER)
                 .selectShippingMethod()
                 .clickNextButton()
-                .clickPlaceOrderButton()
-                .getSuccessMessage();
+                .clickBillingAddrressTheSame()
+                .clickPlaceOrderButton();
         Assert.assertTrue(new CheckoutPage(getDriver()).assertCheckoutPageTc(getPropertyValue("environment", "SUCCESS_ORDER_URL")));
     }
 

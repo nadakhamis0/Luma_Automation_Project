@@ -19,7 +19,7 @@ public class Utility {
     private static final String SCREENSHOTS_PATH = "test-outputs/screenshots/";
 
     public static void clickingOnElement(WebDriver driver, By locator) {
-        new WebDriverWait(driver, Duration.ofSeconds(5))
+        new WebDriverWait(driver, Duration.ofSeconds(30))
                 .until(ExpectedConditions.visibilityOfElementLocated(locator));
         driver.findElement(locator).click();
     }

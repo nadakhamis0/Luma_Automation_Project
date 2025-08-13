@@ -5,6 +5,7 @@ import Listeners.ITestResultListenerClass;
 import Pages.LoginPage;
 import Utilities.DataUtils;
 import Utilities.Utility;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -18,6 +19,8 @@ import static DriverFactory.DriverFactory.*;
 import static Utilities.DataUtils.getPropertyValue;
 
 @Listeners({IInvokedMethodListenerClass.class, ITestResultListenerClass.class})
+@Epic("Login Module")
+@Feature("Login Feature")
 public class LoginTest {
     private final String EMAIL = DataUtils.getJsonData("Login", "email");
     private final String PASSWORD = DataUtils.getJsonData("Login", "password");
@@ -32,7 +35,9 @@ public class LoginTest {
                 .implicitlyWait(Duration.ofSeconds(10));
     }
 
-    @Test
+    @Test(description = "Verify login works")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Test checks if login with valid credentials is successful")
     public void validLoginTest() throws IOException {
         new LoginPage(getDriver())
                 .enterEmail(EMAIL)
@@ -42,13 +47,15 @@ public class LoginTest {
         Assert.assertTrue(new LoginPage(getDriver()).assertLoginTc(getPropertyValue("environment", "MyACCOUNT_URL")));
     }
 
-    @Test
+    @Test(description = "Verify failed login")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Test checks if login with wrong credentials fails")
     public void InvalidLoginTest() throws IOException {
         new LoginPage(getDriver())
                 .enterEmail(INVALID_EMAIL)
                 .enterPassword(INVALID_PASSWORD)
                 .clickOnLoginButton();
-        Assert.assertTrue(new LoginPage(getDriver()).assertLoginTc(getPropertyValue("environment", "HOME_URL")));
+        Assert.assertFalse(new LoginPage(getDriver()).assertLoginTc(getPropertyValue("environment", "HOME_URL")));
     }
 
 

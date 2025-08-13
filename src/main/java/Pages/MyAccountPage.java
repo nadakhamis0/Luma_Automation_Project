@@ -81,6 +81,11 @@ public class MyAccountPage {
     }
 
     public LoginPage clickOnSaveButton() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         Utility.clickingOnElement(driver, saveButton);
         return new LoginPage(driver);
     }

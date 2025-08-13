@@ -8,26 +8,27 @@ public class CheckoutPage {
     private final WebDriver driver;
     private final By mediumSize = By.id("option-label-size-143-item-168");
     private final By purpleColor = By.id("option-label-color-93-item-57");
-    private final By addToCartButton = By.cssSelector("#maincontent > div.columns > div > div.widget.block.block-static-block > div.block.widget.block-products-list.grid > div > div > ol > li:nth-child(1) > div > div > div.product-item-inner > div > div.actions-primary > form > button");
+    private final By addToCartButton = By.cssSelector(".action.tocart.primary");
     private final By cartIcon = By.cssSelector(".action.showcart");
     private final By checkoutButton = By.xpath("//*[@id=\"top-cart-btn-checkout\"]");
-    private final By firstNameField = By.id("UNVACWO");
-    private final By lastNameField = By.id("FE309TE");
-    private final By companyField = By.id("OBR98Y2");
-    private final By address1Field = By.id("JAMIDNA");
-    private final By address2Field = By.id("YYX1MET");
-    private final By address3Field = By.id("G32ITUU");
-    private final By cityField = By.id("LFNN776");
-    private final By StateDropdown = By.id("QY2P76S");
-    private final By zipCodeField = By.id("EWD1H7R");
-    private final By countryDropdown = By.id("XV9K09V");
-    private final By phoneNumberField = By.id("A3UIOBL");
-    private final By select1RadioButton = By.xpath("//input[@name='ko_unique_1']");
-    //private final By select2RadioButton = By.xpath("//input[@name='ko_unique_2']");
-    private final By nextButton = By.cssSelector(".button.action.continue.primary");
-    private final By placeOrderButton = By.cssSelector(".action.primary.checkout");
-    private final By successMessagePurchase = By.cssSelector(".base");
-
+    private final By emailField = By.xpath("//div[@class='control _with-tooltip']//input[@id='customer-email']");
+    private final By firstNameField = By.cssSelector("[name=\"firstname\"]");
+    private final By lastNameField = By.xpath("//input[@name='lastname']");
+    private final By companyField = By.xpath("//input[@name='company']");
+    private final By address1Field = By.cssSelector("input[name='street[0]']");
+    private final By address2Field = By.cssSelector("input[name='street[1]']");
+    private final By address3Field = By.cssSelector("input[name='street[2]']");
+    private final By cityField = By.cssSelector("input[name='city']");
+    private final By StateDropdown = By.cssSelector("select[name='region_id']");
+    private final By zipCodeField = By.xpath("//input[@name='postcode']");
+    private final By countryDropdown = By.cssSelector("select[name='country_id']");
+    private final By phoneNumberField = By.cssSelector("input[name='telephone']");
+    private final By flatRateRadioButton = By.cssSelector("[value=\"flatrate_flatrate\"]");
+    //private final By bestWayRadioButton = By.xpath("//input[@name='ko_unique_2']");
+    private final By nextButton = By.cssSelector("button[class='button action continue primary']");
+    private final By newAddressButton = By.cssSelector("button[class='action action-show-popup'");
+    private final By billingAddressTheSame = By.cssSelector("input[name='billing-address-same-as-shipping']");
+    private final By placeOrderButton = By.xpath("//*[@id=\"checkout-payment-method-load\"]/div/div/div[2]/div[2]/div[4]/div");
 
     public CheckoutPage(WebDriver driver) {
         this.driver = driver;
@@ -37,13 +38,23 @@ public class CheckoutPage {
         Utility.clickingOnElement(driver, mediumSize);
         Utility.clickingOnElement(driver, purpleColor);
         Utility.clickingOnElement(driver, addToCartButton);
+        Utility.waitForElementTOBeVisible(driver, cartIcon);
         Utility.clickingOnElement(driver, cartIcon);
         Utility.clickingOnElement(driver, checkoutButton);
         return this;
     }
 
-    public CheckoutPage enterFullName(String firstName, String lastName) {
+    public CheckoutPage enterEmail(String email) {
+        Utility.sendData(driver, emailField, email);
+        return this;
+    }
+
+    public CheckoutPage enterFirstName(String firstName) {
         Utility.sendData(driver, firstNameField, firstName);
+        return this;
+    }
+
+    public CheckoutPage enterLastName(String lastName) {
         Utility.sendData(driver, lastNameField, lastName);
         return this;
     }
@@ -86,22 +97,42 @@ public class CheckoutPage {
     }
 
     public CheckoutPage selectShippingMethod() {
-        Utility.clickingOnElement(driver, select1RadioButton);
+        Utility.clickingOnElement(driver, flatRateRadioButton);
+        Utility.generalWait(driver);
         return this;
     }
 
     public CheckoutPage clickNextButton() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         Utility.clickingOnElement(driver, nextButton);
+        Utility.takeScreenShot(driver, "checkoutPage");
+        return this;
+    }
+
+    public CheckoutPage clickOnNewAddressButton() {
+        Utility.clickingOnElement(driver, newAddressButton);
+        return this;
+    }
+
+    public CheckoutPage clickBillingAddrressTheSame() {
+        Utility.clickingOnElement(driver, billingAddressTheSame);
         return this;
     }
 
     public CheckoutPage clickPlaceOrderButton() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         Utility.clickingOnElement(driver, placeOrderButton);
+        Utility.generalWait(driver);
+        Utility.takeScreenShot(driver, "checkoutPage");
         return this;
-    }
-
-    public String getSuccessMessage() {
-        return Utility.getText(driver, successMessagePurchase);
     }
 
     public boolean assertCheckoutPageTc(String expectedValue) {

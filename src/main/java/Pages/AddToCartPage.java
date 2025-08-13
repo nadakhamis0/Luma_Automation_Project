@@ -5,16 +5,34 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class AddToCartPage {
+    /*private static List<WebElement> products;
+    private final By numberOfProductsOnCartIcon = By.cssSelector(".counter.qty");*/
     private final WebDriver driver;
     private final By mediumSize = By.id("option-label-size-143-item-168");
     private final By purpleColor = By.id("option-label-color-93-item-57");
-    private final By addToCartButton = By.cssSelector("#maincontent > div.columns > div > div.widget.block.block-static-block > div.block.widget.block-products-list.grid > div > div > ol > li:nth-child(1) > div > div > div.product-item-inner > div > div.actions-primary > form > button");
+    private final By addToCartButton = By.cssSelector(".action.tocart.primary");
     private final By cartIcon = By.cssSelector(".action.showcart");
     private final By checkoutButton = By.xpath("//*[@id=\"top-cart-btn-checkout\"]");
 
 
     public AddToCartPage(WebDriver driver) {
         this.driver = driver;
+    }
+
+    public AddToCartPage addOrderToCart() {
+        Utility.clickingOnElement(driver, mediumSize);
+        Utility.clickingOnElement(driver, purpleColor);
+        Utility.clickingOnElement(driver, addToCartButton);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        Utility.waitForElementTOBeVisible(driver, cartIcon);
+        Utility.clickingOnElement(driver, cartIcon);
+        Utility.generalWait(driver);
+        Utility.clickingOnElement(driver, checkoutButton);
+        return this;
     }
 
     public AddToCartPage selectSize() {
@@ -43,7 +61,39 @@ public class AddToCartPage {
     }
 
     public boolean assertAddToCartPageTc(String expectedValue) {
+
         return driver.getCurrentUrl().equals(expectedValue);
     }
+
+
+    //TODO: Add a method to add products to the cart
+    /*public AddToCartPage addProductsToCart() {
+        products = driver.findElements(addToCartButton);
+        LogsUtils.info("Number of products found:" + products.size());
+        for (WebElement product : products) {
+            product.click();
+        }
+        Utility.clickingOnElement(driver, numberOfProductsOnCartIcon);
+        return this;
+    }
+     //TODO: Add a method to get the number of products in the cart
+    public String getNumOfProductsInCart() {
+        try {
+            LogsUtils.info("number of products in cart:" + Utility.getText(driver, numberOfProductsOnCartIcon));
+            return Utility.getText(driver, numberOfProductsOnCartIcon);
+        } catch (Exception e) {
+            LogsUtils.error("Error: " + e.getMessage());
+            return "0";
+        }
+    }
+
+    public boolean isProductAddedToCart() {
+        try {
+            return Utility.getText(driver, numberOfProductsOnCartIcon).equals("1");
+        } catch (Exception e) {
+            LogsUtils.error("Error:" + e.getMessage());
+        }
+        return true;
+    }*/
 
 }
